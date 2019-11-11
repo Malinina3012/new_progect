@@ -14,6 +14,8 @@
 
 body {
     font-family: Proxima Nova, sans-serif;
+    color: #262626; 
+    text-decoration: none;
 }
 
 .conteiner {
@@ -21,14 +23,74 @@ body {
     margin: auto;
 }
 
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.menu {
+  position: fixed;  
+  z-index: 0; 
+  width: 100%;
+  top: 80px;
+  left: 0;
+  padding: 16px 0;
+  background-color: #507fe1;
+  color: #fff;
+  transform: translateY(-200%);
+  opasity: 0;
+}
+.menu_active {
+  transform: transla teY(0);
+  opasity: 1;
+}
+
+.menu_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu_link {
+  text-decoration: none;
+  font-size: 17px;
+  color: inherit;
+  text-transform: uppercase;
+}
+
 .navbar-wrap {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     min-height: 80px;
 }
 
 .navbar_menu-button {
-    margin-right: 30px;
+    
+}
+
+.navbar_mobile, .navbar_landline {
+  text-align: right;
+}
+
+.navbar_phone {
+  display: block;
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.small-text {
+  display: block;
+  font-size: 14px;
+  color: #7b7b7b;
+  text-decoration: none;
 }
 
 .menu-button {
@@ -55,13 +117,120 @@ body {
 .logo_text {
     display: block;
     font-weight: 700;
+    margin-bottom: 10px;
     font-size: 18px;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .logo_description {
     display: block;
     font-size: 14px;
-    color: gray;
+    color: #6b6b6b;
 }
+
+.button-o {
+  text-transform: uppercase;
+  border: 2px solid #507fe1;
+  padding: 17px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #507fe1;
+  background: inherit
+}
+
+.hero {
+  background: #f1f1f1 url("https://raw.githubusercontent.com/Malinina3012/new_progect/master/img/hero.jpg") no-repeat right;
+  background-size: 65%;
+  background-origin: content-box;
+  padding-top: 120px;
+  padding-bottom: 270px;
+  margin-top: 80px;
+}
+
+.hero-title {
+  width: 300px;
+  height: 94px;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 67px;
+}
+
+.hero_button {
+  display: block;
+}
+.button {  
+  padding: 25px 45px;
+  border: none;
+  text-transform: uppercase;
+  background-color: #507fe1;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .conteiner {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 960px) {
+  .conteiner {
+    max-width: 750px;
+  }
+  
+    .hero {
+    background-size: cover;
+   
+  }
+  
+  .navbar_mobile, .navbar_landline {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .conteiner {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero {   
+    background-position: top 100% right 
+  }
+}
+
+@media (max-width: 570px) {
+  .logo {
+    display: none;
+  }
+  
+
+  .hero-title, .hero-subtitle {
+    color: #fff;
+  } 
+  
+  .menu-button {
+    height: 60px;
+  }
+  
+  .menu {    
+    tran/sform: translateY(0)/*добавится JS*/
+  }
+  
+  .menu_nav {
+    flex-direction: column;
+  }
+  
+  .menu_link {
+    margin-bottom: 20px;
+  }
+}
+
